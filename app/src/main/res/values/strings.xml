@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">QuizApp2</string>
+
+    <string name="nameText_header">Your name</string>
+
+    <string name="button_next">Next</string>
+    <string name="button_back">Back</string>
+    <string name="button_submit">Submit</string>
+    <string name="button_restart">Restart</string>
+    <string name="button_share">Share</string>
+
+    <!-- Questions -->
+    <string name="q1">Select all Primary colors</string>
+    <string name="q2">Select all color-couples that are Complementary</string>
+    <string name="q3">Which one of the statements is true?</string>
+    <string name="q4">Can you name the Primary color in this image?</string>
+    <string name="q5">What is the other name for Neutral colors that lack saturation?</string>
+    <string name="q6">Select all colors that are Achromatic (Neutral)</string>
+    <string name="q7">What are the Tertiary Colors?</string>
+    <string name="q8">Select all of the colors from the CMYK color model</string>
+    <string name="q9">Select the three additive Primary colors in the RGB color model?</string>
+
+    <!-- Answers -->
+    <string name="q1_ans1">Blue</string>
+    <string name="q1_ans2">Green</string>
+    <string name="q1_ans3">Yellow</string>
+    <string name="q1_ans4">Purple</string>
+    <string name="q1_ans5">Red</string>
+    <string name="q2_ans1">Red &amp; Green</string>
+    <string name="q2_ans2">Purple &amp; Orange</string>
+    <string name="q2_ans3">Blue &amp; Orange</string>
+    <string name="q2_ans4">Yellow &amp; Purple</string>
+    <string name="q2_ans5">Red &amp; Blue</string>
+    <string name="q3_ans1">Green, Orange and Purple are called Primary colors.</string>
+    <string name="q3_ans2">Red, Blue and Purple are called Secondary colors.</string>
+    <string name="q3_ans3">Green, Orange and Purple are called Secondary colors.</string>
+    <string name="q4_ans">blue</string>
+    <string name="q5_ans">achromatic</string>
+    <string name="q6_ans1">Pink</string>
+    <string name="q6_ans2">Carmine</string>
+    <string name="q6_ans3">Gray</string>
+    <string name="q6_ans4">Cyan</string>
+    <string name="q6_ans5">Black</string>
+    <string name="q6_ans6">White</string>
+    <string name="q7_ans1">Mixed Primary and Secondary Colors</string>
+    <string name="q7_ans2">Opposite to each other on the color wheel</string>
+    <string name="q7_ans3">Mixed Secondary and Complementary Colors</string>
+    <string name="q8_ans1">Cyan</string>
+    <string name="q8_ans2">Mandarin</string>
+    <string name="q8_ans3">Black</string>
+    <string name="q8_ans4">Kiwi</string>
+    <string name="q8_ans5">Carmine</string>
+    <string name="q8_ans6">Yellow</string>
+    <string name="q8_ans7">Magenta</string>
+    <string name="q8_ans8">Red</string>
+    <string name="q9_ans1">Magenta, Green, Blue</string>
+    <string name="q9_ans2">Green, Blue, Red</string>
+    <string name="q9_ans3">Blue, Red, Yellow</string>
+
+    <string name="editText_hint">Your answer</string>
+
+
+    <string name="results_text">You score is: here \nYou score is: here \nYou score is: here</string>
+
+    <string name="plus">+</string>
+</resources>

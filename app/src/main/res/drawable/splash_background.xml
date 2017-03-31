@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Not in use now, Instead is used activity_splash.xml -->
+    <item
+        android:drawable="@android:color/white"
+        android:gravity="center_vertical"/>
+    <item>
+        <bitmap
+            android:gravity="center|clip_vertical"
+            android:src="@drawable/color_quiz_splash_01"
+            />
+    </item>
+
+</layer-list>

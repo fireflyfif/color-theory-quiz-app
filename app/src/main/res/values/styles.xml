@@ -1,0 +1,139 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:drawable">@layout/activity_splash</item>
+    </style>
+
+    <!-- Name Header TextView -->
+    <style name="nameText_header" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:elevation">5dp</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <!-- CardView Style Dimens -->
+    <style name="CardViewStyle" parent="CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_below">@id/name_text</item>
+        <item name="cardCornerRadius">@dimen/cardCornerRadius</item>
+        <item name="contentPadding">@dimen/contentPadding</item>
+        <item name="cardBackgroundColor">@android:color/white</item>
+        <item name="cardElevation">@dimen/cardElevation</item>
+        <item name="android:layout_margin">@dimen/cardView_layoutMargin</item>
+    </style>
+
+    <!-- Questions TextView -->
+    <style name="questionsStyle" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:maxLines">3</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="questionsStyle.Number">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <!-- CheckBox Styles -->
+    <style name="checkBox" parent="AppTheme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:checked">false</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:layout_margin">10dp</item>
+    </style>
+
+    <!-- RadioGroup Styles -->
+    <style name="radioGroup" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">15dp</item>
+    </style>
+
+    <!-- RadioButtons Styles -->
+    <style name="radioButtons" parent="AppTheme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">6dp</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:background">@android:color/darker_gray</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <!-- Image Question 4 -->
+    <style name="imageQuestion4" parent="AppTheme">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">200dp</item>
+        <item name="android:padding">20dp</item>
+    </style>
+
+    <!-- EditText Style -->
+    <style name="editText" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:padding">20dp</item>
+    </style>
+
+    <!-- LinearLayout Horizontal Question 6 Style -->
+    <style name="linearLayout_horizontal" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!-- Buttons Layout -->
+    <style name="buttons_LinearLayout" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">bottom</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+    <!-- Buttons Style -->
+    <style name="ButtonStyle" parent="AppTheme">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- Results' Text -->
+    <style name="resultText" parent="AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:maxLines">4</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+</resources>

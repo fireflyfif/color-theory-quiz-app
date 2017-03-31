@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- CardView Style Dimens -->
+    <dimen name="cardCornerRadius">4dp</dimen>
+    <dimen name="contentPadding">0dp</dimen>
+    <dimen name="cardView_layoutMargin">15dp</dimen>
+    <dimen name="cardElevation">5dp</dimen>
+
+
+
+
+</resources>
