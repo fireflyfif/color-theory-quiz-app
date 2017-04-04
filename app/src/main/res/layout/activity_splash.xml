@@ -9,21 +9,10 @@
     tools:context="com.example.android.quizapp2.SplashActivity">
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Color Theory Quiz"
-        android:textAllCaps="true"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="30sp"
-        android:padding="20dp"/>
-
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:layout_margin="50dp"
-        android:src="@drawable/color_quiz_splash_01"/>
+        android:contentDescription="@string/splash_image"
+        style="@style/splashImg"
+        android:src="@drawable/color_quiz_splash_03"/>
 
 
 </LinearLayout>

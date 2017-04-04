@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,24 +10,6 @@
         android:id="@+id/name_text"
         style="@style/nameText_header"
         android:text="@string/nameText_header" />
-
-
-    <TextView
-        android:id="@+id/count_score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:paddingRight="16dp"
-        android:paddingTop="20dp"
-        android:text="0" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toLeftOf="@id/count_score"
-        android:paddingRight="10dp"
-        android:paddingTop="20dp"
-        android:text="Score:" />
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardView_1"
@@ -45,41 +26,59 @@
                 style="@style/questionsStyle"
                 android:text="@string/q1" />
 
-            <CheckBox
-                android:id="@+id/checkBox_1"
-                style="@style/checkBox"
-                android:text="@string/q1_ans1" />
+            <LinearLayout style="@style/linearLayout_horizontal">
 
-            <CheckBox
-                android:id="@+id/checkBox_2"
-                style="@style/checkBox"
-                android:text="@string/q1_ans2" />
+                <LinearLayout
+                    style="@style/LinearLayout_vertical">
 
-            <CheckBox
-                android:id="@+id/checkBox_3"
-                style="@style/checkBox"
-                android:text="@string/q1_ans3" />
+                    <CheckBox
+                        android:id="@+id/checkBox_1"
+                        style="@style/checkBox"
+                        android:drawableLeft="@drawable/blue_2" />
 
-            <CheckBox
-                android:id="@+id/checkBox_4"
-                style="@style/checkBox"
-                android:text="@string/q1_ans4" />
+                    <CheckBox
+                        android:id="@+id/checkBox_2"
+                        style="@style/checkBox"
+                        android:drawableLeft="@drawable/green_2" />
 
-            <CheckBox
-                android:id="@+id/checkBox_5"
-                style="@style/checkBox"
-                android:text="@string/q1_ans5" />
+                    <CheckBox
+                        android:id="@+id/checkBox_3"
+                        style="@style/checkBox"
+                        android:drawableLeft="@drawable/yellow_2" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/LinearLayout_vertical">
+
+                    <CheckBox
+                        android:id="@+id/checkBox_4"
+                        style="@style/checkBox"
+                        android:drawableLeft="@drawable/purple_2" />
+
+                    <CheckBox
+                        android:id="@+id/checkBox_5"
+                        style="@style/checkBox"
+                        android:drawableLeft="@drawable/red_2" />
+
+                    <CheckBox
+                        android:id="@+id/checkBox_6"
+                        style="@style/checkBox"
+                        android:drawableLeft="@drawable/orange_2" />
+
+                </LinearLayout>
+            </LinearLayout>
 
             <LinearLayout style="@style/buttons_LinearLayout">
 
                 <Button
-                    android:visibility="invisible"
-                    style="@style/ButtonStyle"
+                    style="@style/AppTheme.ButtonStyle.Back"
                     android:onClick="buttonBack"
-                    android:text="@string/button_back" />
+                    android:text="@string/button_back"
+                    android:visibility="invisible" />
 
                 <Button
-                    style="@style/ButtonStyle"
+                    style="@style/AppTheme.ButtonStyle.Next"
                     android:onClick="buttonNext"
                     android:text="@string/button_next" />
 
@@ -102,53 +101,46 @@
 
             <TextView
                 android:id="@+id/question_2"
-                style="@style/questionsStyle"
+                style="@style/questionsStyle.q2"
                 android:text="@string/q2" />
 
-            <CheckBox
-                android:id="@+id/q2_ans1"
-                style="@style/checkBox"
-                android:text="@string/q2_ans1" />
+            <RadioGroup style="@style/radioGroup">
 
-            <CheckBox
-                android:id="@+id/q2_ans2"
-                style="@style/checkBox"
-                android:text="@string/q2_ans2" />
+                <RadioButton
+                    android:id="@+id/q2_ans_1"
+                    style="@style/radioButtons"
+                    android:text="@string/q2_ans1" />
 
-            <CheckBox
-                android:id="@+id/q2_ans3"
-                style="@style/checkBox"
-                android:text="@string/q2_ans3" />
+                <RadioButton
+                    android:id="@+id/q2_ans_2"
+                    style="@style/radioButtons"
+                    android:text="@string/q2_ans2" />
 
-            <CheckBox
-                android:id="@+id/q2_ans4"
-                style="@style/checkBox"
-                android:text="@string/q2_ans4" />
+                <RadioButton
+                    android:id="@+id/q2_ans_3"
+                    style="@style/radioButtons"
+                    android:text="@string/q2_ans3" />
 
-            <CheckBox
-                android:id="@+id/q2_ans5"
-                style="@style/checkBox"
-                android:text="@string/q2_ans5" />
-
+            </RadioGroup>
 
             <LinearLayout style="@style/buttons_LinearLayout">
 
                 <Button
-                    style="@style/ButtonStyle"
+                    style="@style/AppTheme.ButtonStyle.Back"
                     android:onClick="buttonBack"
                     android:text="@string/button_back" />
 
                 <Button
-                    style="@style/ButtonStyle"
+                    style="@style/AppTheme.ButtonStyle.Next"
                     android:onClick="buttonNext"
                     android:text="@string/button_next" />
-
 
             </LinearLayout>
 
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
+
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardView_3"
@@ -162,11 +154,10 @@
 
             <TextView
                 android:id="@+id/question_3"
-                style="@style/questionsStyle"
+                style="@style/questionsStyle.q3"
                 android:text="@string/q3" />
 
-            <RadioGroup
-                style="@style/radioGroup">
+            <RadioGroup style="@style/radioGroup">
 
                 <RadioButton
                     android:id="@+id/q3_ans_1"
@@ -188,12 +179,12 @@
             <LinearLayout style="@style/buttons_LinearLayout">
 
                 <Button
-                    style="@style/ButtonStyle"
+                    style="@style/AppTheme.ButtonStyle.Back"
                     android:onClick="buttonBack"
                     android:text="@string/button_back" />
 
                 <Button
-                    style="@style/ButtonStyle"
+                    style="@style/AppTheme.ButtonStyle.Next"
                     android:onClick="buttonNext"
                     android:text="@string/button_next" />
 
@@ -218,15 +209,15 @@
 
             <TextView
                 android:id="@+id/question_4"
-                style="@style/questionsStyle"
+                style="@style/questionsStyle.q4"
                 android:text="@string/q4" />
 
 
             <ImageView
+                android:contentDescription="@string/imageQuestion"
                 android:id="@+id/image_q4"
                 style="@style/imageQuestion4"
-                android:src="@drawable/color_quiz_splash_01"
-                android:padding="20dp" />
+                android:src="@drawable/quiz_image_2" />
 
             <EditText
                 android:id="@+id/editText_q4"
@@ -236,13 +227,13 @@
             <LinearLayout style="@style/buttons_LinearLayout">
 
                 <Button
-                    style="@style/ButtonStyle"
+                    style="@style/AppTheme.ButtonStyle.Back"
                     android:onClick="buttonBack"
                     android:text="@string/button_back" />
 
                 <Button
                     android:id="@+id/button_next"
-                    style="@style/ButtonStyle"
+                    style="@style/AppTheme.ButtonStyle.Next"
                     android:onClick="buttonNext"
                     android:text="@string/button_next" />
 
@@ -264,7 +255,7 @@
 
             <TextView
                 android:id="@+id/question_5"
-                style="@style/questionsStyle"
+                style="@style/questionsStyle.q5"
                 android:text="@string/q5" />
 
 
@@ -276,12 +267,12 @@
             <LinearLayout style="@style/buttons_LinearLayout">
 
                 <Button
-                    style="@style/ButtonStyle"
+                    style="@style/AppTheme.ButtonStyle.Back"
                     android:onClick="buttonBack"
                     android:text="@string/button_back" />
 
                 <Button
-                    style="@style/ButtonStyle"
+                    style="@style/AppTheme.ButtonStyle.Next"
                     android:onClick="buttonNext"
                     android:text="@string/button_next" />
 
@@ -303,17 +294,14 @@
 
             <TextView
                 android:id="@+id/question_6"
-                style="@style/questionsStyle"
+                style="@style/questionsStyle.q6"
                 android:text="@string/q6" />
 
             <LinearLayout
                 style="@style/linearLayout_horizontal">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    style="@style/LinearLayout_vertical">
 
                     <CheckBox
                         android:id="@+id/q6_ans1"
@@ -333,10 +321,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    style="@style/LinearLayout_vertical">
 
                     <CheckBox
                         android:id="@+id/q6_ans4"
@@ -360,12 +345,12 @@
             <LinearLayout style="@style/buttons_LinearLayout">
 
                 <Button
-                    style="@style/ButtonStyle"
+                    style="@style/AppTheme.ButtonStyle.Back"
                     android:onClick="buttonBack"
                     android:text="@string/button_back" />
 
                 <Button
-                    style="@style/ButtonStyle"
+                    style="@style/AppTheme.ButtonStyle.Next"
                     android:onClick="buttonNext"
                     android:text="@string/button_next" />
 
@@ -388,46 +373,72 @@
 
             <TextView
                 android:id="@+id/question_7"
-                style="@style/questionsStyle"
+                style="@style/questionsStyle.q7"
                 android:text="@string/q7" />
 
-            <RadioGroup
-                style="@style/radioGroup">
+            <LinearLayout style="@style/linearLayout_horizontal">
 
-                <RadioButton
-                    android:id="@+id/q7_ans_1"
-                    style="@style/radioButtons"
-                    android:text="@string/q7_ans1" />
+                <LinearLayout
+                    style="@style/LinearLayout_vertical">
 
-                <RadioButton
-                    android:id="@+id/q7_ans_2"
-                    style="@style/radioButtons"
-                    android:text="@string/q7_ans2" />
+                    <CheckBox
+                        android:id="@+id/q7_ans1"
+                        style="@style/checkBox"
+                        android:drawableLeft="@drawable/red_green_2" />
 
-                <RadioButton
-                    android:id="@+id/q7_ans_3"
-                    style="@style/radioButtons"
-                    android:text="@string/q7_ans3" />
+                    <CheckBox
+                        android:id="@+id/q7_ans2"
+                        style="@style/checkBox"
+                        android:drawableLeft="@drawable/orange_red_2" />
 
-            </RadioGroup>
+                    <CheckBox
+                        android:id="@+id/q7_ans3"
+                        style="@style/checkBox"
+                        android:drawableLeft="@drawable/blue_orange_2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/LinearLayout_vertical">
+
+
+                    <CheckBox
+                        android:id="@+id/q7_ans4"
+                        style="@style/checkBox"
+                        android:drawableLeft="@drawable/yellow_purple_2" />
+
+                    <CheckBox
+                        android:id="@+id/q7_ans5"
+                        style="@style/checkBox"
+                        android:drawableLeft="@drawable/purple_pink_2" />
+
+                    <CheckBox
+                        android:id="@+id/q7_ans6"
+                        style="@style/checkBox"
+                        android:drawableLeft="@drawable/green_yellow_2" />
+
+                </LinearLayout>
+            </LinearLayout>
+
 
             <LinearLayout style="@style/buttons_LinearLayout">
 
                 <Button
-                    style="@style/ButtonStyle"
+                    style="@style/AppTheme.ButtonStyle.Back"
                     android:onClick="buttonBack"
                     android:text="@string/button_back" />
 
                 <Button
-                    style="@style/ButtonStyle"
+                    style="@style/AppTheme.ButtonStyle.Next"
                     android:onClick="buttonNext"
                     android:text="@string/button_next" />
+
 
             </LinearLayout>
 
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
+
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardView_8"
@@ -441,18 +452,13 @@
 
             <TextView
                 android:id="@+id/question_8"
-                style="@style/questionsStyle"
+                style="@style/questionsStyle.q8"
                 android:text="@string/q8" />
 
-            <LinearLayout
-                style="@style/linearLayout_horizontal">
+            <LinearLayout style="@style/linearLayout_horizontal">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:paddingEnd="10dp"
-                    android:orientation="vertical">
+                    style="@style/LinearLayout_vertical">
 
                     <CheckBox
                         android:id="@+id/q8_ans1"
@@ -477,10 +483,7 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    style="@style/LinearLayout_vertical">
 
                     <CheckBox
                         android:id="@+id/q8_ans5"
@@ -509,12 +512,12 @@
             <LinearLayout style="@style/buttons_LinearLayout">
 
                 <Button
-                    style="@style/ButtonStyle"
+                    style="@style/AppTheme.ButtonStyle.Back"
                     android:onClick="buttonBack"
                     android:text="@string/button_back" />
 
                 <Button
-                    style="@style/ButtonStyle"
+                    style="@style/AppTheme.ButtonStyle.Next"
                     android:onClick="buttonNext"
                     android:text="@string/button_next" />
 
@@ -536,11 +539,10 @@
 
             <TextView
                 android:id="@+id/question_9"
-                style="@style/questionsStyle"
+                style="@style/questionsStyle.q9"
                 android:text="@string/q9" />
 
-            <RadioGroup
-                style="@style/radioGroup">
+            <RadioGroup style="@style/radioGroup">
 
                 <RadioButton
                     android:id="@+id/q9_ans_1"
@@ -562,13 +564,13 @@
             <LinearLayout style="@style/buttons_LinearLayout">
 
                 <Button
-                    style="@style/ButtonStyle"
+                    style="@style/AppTheme.ButtonStyle.Back"
                     android:onClick="buttonBack"
                     android:text="@string/button_back" />
 
                 <Button
                     android:id="@+id/button_submit"
-                    style="@style/ButtonStyle"
+                    style="@style/AppTheme.ButtonStyle.Submit"
                     android:onClick="buttonSubmit"
                     android:text="@string/button_submit" />
 
@@ -595,25 +597,22 @@
                 android:text="@string/results_text" />
 
             <ImageView
+                android:contentDescription="@string/trophy_image"
                 android:id="@+id/result_image"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:layout_gravity="center"
-                android:layout_margin="20dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/coffee_gallery_1" />
+                style="@style/trophyImage"
+                android:src="@drawable/color_trophy_full" />
 
             <LinearLayout style="@style/buttons_LinearLayout">
 
                 <Button
                     android:id="@+id/button_restart"
-                    style="@style/ButtonStyle"
+                    style="@style/AppTheme.ButtonStyle.Restart"
                     android:onClick="buttonRestart"
                     android:text="@string/button_restart" />
 
                 <Button
                     android:id="@+id/button_share"
-                    style="@style/ButtonStyle"
+                    style="@style/AppTheme.ButtonStyle.Share"
                     android:onClick="buttonShare"
                     android:text="@string/button_share" />
 

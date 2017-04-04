@@ -7,30 +7,21 @@
     tools:context="com.example.android.quizapp2.StartActivity">
 
     <ImageView
+        android:contentDescription="@string/starting_image"
         android:id="@+id/quiz_image"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:src="@drawable/color_quiz_screen_06"/>
+        style="@style/startingImage"
+        android:src="@drawable/color_quiz_screen_07"/>
 
     <EditText
         android:id="@+id/user_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textCapWords"
-        android:textAlignment="center"
-        android:layout_below="@id/quiz_image"
-        android:padding="16dp"
-        android:hint="Your Name" />
+        style="@style/yourName_edit"
+        android:hint="@string/nameText_header" />
 
 
     <Button
         android:id="@+id/start_quiz"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="16dp"
-        android:text="Start Quiz"
-        android:onClick="Start"
-        />
+        style="@style/StartButton"
+        android:text="@string/button_start"
+        android:onClick="Start" />
 
 </RelativeLayout>

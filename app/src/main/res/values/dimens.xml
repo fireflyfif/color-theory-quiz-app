@@ -1,12 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Splash Image -->
+    <dimen name="splashImg_margin">30dp</dimen>
+
+    <!-- Starting Image -->
+    <dimen name="startImg_height">400dp</dimen>
+
+    <!-- Your Name EditText -->
+    <dimen name="yourName_padding">16dp</dimen>
+
     <!-- CardView Style Dimens -->
     <dimen name="cardCornerRadius">4dp</dimen>
     <dimen name="contentPadding">0dp</dimen>
     <dimen name="cardView_layoutMargin">15dp</dimen>
     <dimen name="cardElevation">5dp</dimen>
 
+    <!-- Buttons Dimens -->
+    <dimen name="buttons_width">0dp</dimen>
+    <dimen name="buttonStart_margin">16dp</dimen>
+    <dimen name="buttons_padding">5dp</dimen>
 
+    <!-- Name Text Dimens -->
+    <dimen name="nameText_height">50dp</dimen>
+    <dimen name="nameText_size">28sp</dimen>
+    <dimen name="nameText_elevation">5dp</dimen>
+
+    <!-- Questions Text Dimens -->
+    <dimen name="questions_height">100dp</dimen>
+    <dimen name="questions_padding">10dp</dimen>
+    <dimen name="questions_textSize">20sp</dimen>
+
+    <!-- CheckBox Dimens -->
+    <dimen name="checkBox_paddingLeft">10dp</dimen>
+    <dimen name="checkBox_margin">10dp</dimen>
+
+    <!-- RadioGroup and Buttons Dimens -->
+    <dimen name="radioGroup_padding">15dp</dimen>
+    <dimen name="radioButton_padding">6dp</dimen>
+    <dimen name="radioButton_margin">3dp</dimen>
+
+    <!-- Image Question Dimens -->
+    <dimen name="imageQuestion_size">200dp</dimen>
+    <dimen name="imageQuestion_padding">20dp</dimen>
+
+    <!-- EditText Question Dimens -->
+    <dimen name="editText_margin">10dp</dimen>
+    <dimen name="editText_padding">20dp</dimen>
+
+    <!-- LinearLayout Horizontal & Vertical Dimens -->
+    <dimen name="linearHor_padding">10dp</dimen>
+    <dimen name="linearVer_width">0dp</dimen>
+
+    <!-- Results Text Dimens -->
+    <dimen name="results_padding">10dp</dimen>
+    <dimen name="results_textSize">20sp</dimen>
+
+    <!-- Trophy Image Dimens -->
+    <dimen name="trophyImg_size">250dp</dimen>
+    <dimen name="trophyImg_margin">30dp</dimen>
 
 
 </resources>
