@@ -28,6 +28,12 @@
         <item name="android:layout_height">@dimen/startImg_height</item>
     </style>
 
+    <style name="startingImage.Horizontal">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
     <!-- Your Name EditText -->
     <style name="yourName_edit" parent="AppTheme">
         <item name="android:layout_width">match_parent</item>
@@ -91,7 +97,6 @@
         <item name="android:layout_margin">@dimen/buttonStart_margin</item>
     </style>
 
-
     <!-- Name Header TextView -->
     <style name="nameText_header" parent="AppTheme">
         <item name="android:layout_width">match_parent</item>
@@ -102,6 +107,13 @@
         <item name="android:textColor">@android:color/white</item>
         <item name="elevation">@dimen/nameText_elevation</item>
         <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <!-- LinearLayout Starting Screen -->
+    <style name="LinearLayout_vertical.start">
+        <item name="android:paddingLeft">@dimen/layout_paddingLeft</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_gravity">center_vertical</item>
     </style>
 
     <!-- CardView Style -->
@@ -234,11 +246,10 @@
 
     <!-- Trophy Image -->
     <style name="trophyImage" parent="AppTheme">
-        <item name="android:layout_width">@dimen/trophyImg_size</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">@dimen/trophyImg_size</item>
-        <item name="android:layout_gravity">center</item>
-        <item name="android:scaleType">fitCenter</item>
-        <item name="android:layout_margin">@dimen/trophyImg_margin</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:layout_marginTop">@dimen/trophyImg_margin</item>
     </style>
 
 </resources>

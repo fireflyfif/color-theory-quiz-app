@@ -8,7 +8,7 @@
     <item>
         <bitmap
             android:gravity="center|clip_vertical"
-            android:src="@drawable/color_quiz_splash_01"
+            android:src="@drawable/color_quiz_splash_03"
             />
     </item>
 

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context="com.example.android.quizapp2.StartActivity">
+
+    <ImageView
+        android:id="@+id/quiz_image"
+        style="@style/startingImage.Horizontal"
+        android:contentDescription="@string/starting_image"
+        android:src="@drawable/color_quiz_screen_07" />
+
+    <LinearLayout
+        style="@style/LinearLayout_vertical.start">
+
+        <EditText
+            android:id="@+id/user_name"
+            style="@style/yourName_edit"
+            android:hint="@string/nameText_header" />
+
+
+        <Button
+            android:id="@+id/start_quiz"
+            style="@style/StartButton"
+            android:onClick="Start"
+            android:text="@string/button_start" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

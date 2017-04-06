@@ -59,7 +59,10 @@ public class QuizActivity extends AppCompatActivity {
             score = savedInstanceState.getInt(SAVE_SCORE, score);
             currentQuestion = savedInstanceState.getInt(SAVE_CURRENT_QUESTION, currentQuestion);
             name = savedInstanceState.getString(SAVE_NAME, name);
-//            cards = savedInstanceState.getParcelable(ALL_CARDS);
+//            cardViewOne = savedInstanceState.getParcelable(SAVE_CARD_ONE);
+
+
+//            cards = savedInstanceState.getBundle(ALL_CARDS);
         }
 
 
@@ -99,8 +102,8 @@ public class QuizActivity extends AppCompatActivity {
         savedInstanceState.putInt(SAVE_SCORE, score);
         savedInstanceState.putInt(SAVE_CURRENT_QUESTION, currentQuestion);
         savedInstanceState.putString(SAVE_NAME, name);
-//        savedInstanceState.putParcelableArray(ALL_CARDS);
-
+//        savedInstanceState.putParcelable(SAVE_CARD_ONE, cardViewOne);
+//        savedInstanceState.putParcelable(ALL_CARDS, cards);
         super.onSaveInstanceState(savedInstanceState);
     }
 
@@ -111,10 +114,8 @@ public class QuizActivity extends AppCompatActivity {
         savedInstanceState.getInt(SAVE_SCORE);
         savedInstanceState.getInt(SAVE_CURRENT_QUESTION);
         savedInstanceState.getString(SAVE_NAME);
-//        savedInstanceState.getParcelable(ALL_CARDS);
-
+        savedInstanceState.getParcelable(ALL_CARDS);
         super.onRestoreInstanceState(savedInstanceState);
-
     }
 
     // Button Next
@@ -150,13 +151,13 @@ public class QuizActivity extends AppCompatActivity {
         if (score <= 20) {
             yourScore.setText("Hey " + name + "\nYou score is " + score + " out of 90." +
                     "\nYou can do better!");
-            ImageView looserImage = (ImageView) findViewById(R.id.result_image);
-            looserImage.setImageResource(R.drawable.color_trophy_empty);
+            ImageView loserImage = (ImageView) findViewById(R.id.result_image);
+            loserImage.setImageResource(R.drawable.color_trophy_empty);
         } else if (score <= 60) {
             yourScore.setText("Hey " + name + "\nYou score is " + score + " out of 90." +
                     "\nNice! Almost there!");
-            ImageView winnerImage = (ImageView) findViewById(R.id.result_image);
-            winnerImage.setImageResource(R.drawable.color_trophy_half);
+            ImageView mediocreImage = (ImageView) findViewById(R.id.result_image);
+            mediocreImage.setImageResource(R.drawable.color_trophy_half);
         } else {
             yourScore.setText("Hey " + name + "\nYou score is " + score + " out of 90." +
                     "\nAwesome! You know your Colors!");

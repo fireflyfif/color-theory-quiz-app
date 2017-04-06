@@ -6,6 +6,8 @@
     <!-- Starting Image -->
     <dimen name="startImg_height">400dp</dimen>
 
+    <dimen name="layout_paddingLeft">10dp</dimen>
+
     <!-- Your Name EditText -->
     <dimen name="yourName_padding">16dp</dimen>
 
@@ -57,7 +59,7 @@
 
     <!-- Trophy Image Dimens -->
     <dimen name="trophyImg_size">250dp</dimen>
-    <dimen name="trophyImg_margin">30dp</dimen>
+    <dimen name="trophyImg_margin">15dp</dimen>
 
 
 </resources>

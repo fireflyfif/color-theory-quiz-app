@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/quiz_design_bg_02"
+    android:background="@drawable/quiz_design_bg_03"
     tools:context="com.example.android.quizapp2.QuizActivity">
 
     <TextView
@@ -34,17 +34,17 @@
                     <CheckBox
                         android:id="@+id/checkBox_1"
                         style="@style/checkBox"
-                        android:drawableLeft="@drawable/blue_2" />
+                        android:drawableLeft="@drawable/blue" />
 
                     <CheckBox
                         android:id="@+id/checkBox_2"
                         style="@style/checkBox"
-                        android:drawableLeft="@drawable/green_2" />
+                        android:drawableLeft="@drawable/green" />
 
                     <CheckBox
                         android:id="@+id/checkBox_3"
                         style="@style/checkBox"
-                        android:drawableLeft="@drawable/yellow_2" />
+                        android:drawableLeft="@drawable/yellow" />
 
                 </LinearLayout>
 
@@ -54,17 +54,17 @@
                     <CheckBox
                         android:id="@+id/checkBox_4"
                         style="@style/checkBox"
-                        android:drawableLeft="@drawable/purple_2" />
+                        android:drawableLeft="@drawable/purple" />
 
                     <CheckBox
                         android:id="@+id/checkBox_5"
                         style="@style/checkBox"
-                        android:drawableLeft="@drawable/red_2" />
+                        android:drawableLeft="@drawable/red" />
 
                     <CheckBox
                         android:id="@+id/checkBox_6"
                         style="@style/checkBox"
-                        android:drawableLeft="@drawable/orange_2" />
+                        android:drawableLeft="@drawable/orange" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -217,7 +217,7 @@
                 android:contentDescription="@string/imageQuestion"
                 android:id="@+id/image_q4"
                 style="@style/imageQuestion4"
-                android:src="@drawable/quiz_image_2" />
+                android:src="@drawable/quiz_image" />
 
             <EditText
                 android:id="@+id/editText_q4"
@@ -384,17 +384,17 @@
                     <CheckBox
                         android:id="@+id/q7_ans1"
                         style="@style/checkBox"
-                        android:drawableLeft="@drawable/red_green_2" />
+                        android:drawableLeft="@drawable/red_green" />
 
                     <CheckBox
                         android:id="@+id/q7_ans2"
                         style="@style/checkBox"
-                        android:drawableLeft="@drawable/orange_red_2" />
+                        android:drawableLeft="@drawable/orange_red" />
 
                     <CheckBox
                         android:id="@+id/q7_ans3"
                         style="@style/checkBox"
-                        android:drawableLeft="@drawable/blue_orange_2" />
+                        android:drawableLeft="@drawable/blue_orange" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -404,17 +404,17 @@
                     <CheckBox
                         android:id="@+id/q7_ans4"
                         style="@style/checkBox"
-                        android:drawableLeft="@drawable/yellow_purple_2" />
+                        android:drawableLeft="@drawable/yellow_purple" />
 
                     <CheckBox
                         android:id="@+id/q7_ans5"
                         style="@style/checkBox"
-                        android:drawableLeft="@drawable/purple_pink_2" />
+                        android:drawableLeft="@drawable/purple_pink" />
 
                     <CheckBox
                         android:id="@+id/q7_ans6"
                         style="@style/checkBox"
-                        android:drawableLeft="@drawable/green_yellow_2" />
+                        android:drawableLeft="@drawable/green_yellow" />
 
                 </LinearLayout>
             </LinearLayout>
