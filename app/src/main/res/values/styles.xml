@@ -6,7 +6,10 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="colorButtonNormal">@color/colorPurple</item>
+        <item name="colorButtonNormal">@color/colorDeepPurple</item>
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textSize">@dimen/textSize_medium</item>
+
     </style>
 
     <!-- Splash Theme -->
@@ -29,7 +32,7 @@
     </style>
 
     <style name="startingImage.Horizontal">
-        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_width">@dimen/startiImgHoriz_width</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
     </style>
@@ -55,10 +58,11 @@
 
     <!-- Buttons Style -->
     <style name="AppTheme.ButtonStyle" parent="Widget.AppCompat.Button.Colored">
-        <item name="backgroundTint">@color/colorLime</item>
-        <item name="colorButtonNormal">@color/colorYellow</item>
+        <item name="backgroundTint">@color/colorBlueGreen</item>
+        <item name="colorButtonNormal">@color/colorAccent</item>
         <item name="android:layout_width">@dimen/buttons_width</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/buttons_textSize</item>
         <item name="android:layout_weight">1</item>
     </style>
 
@@ -85,7 +89,6 @@
     <!-- Button Share Style -->
     <style name="AppTheme.ButtonStyle.Share">
         <item name="backgroundTint">@color/colorLightBlue</item>
-        <item name="colorButtonNormal">@color/colorYellow</item>
     </style>
 
     <!-- Button Start Style -->
@@ -93,6 +96,7 @@
         <item name="backgroundTint">@color/colorLightBlue</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/buttons_textSize</item>
         <item name="android:layout_alignParentBottom">true</item>
         <item name="android:layout_margin">@dimen/buttonStart_margin</item>
     </style>
@@ -135,9 +139,11 @@
         <item name="android:layout_height">@dimen/questions_height</item>
         <item name="android:maxLines">3</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:padding">@dimen/questions_padding</item>
+        <item name="android:paddingLeft">@dimen/questions_padding</item>
+        <item name="android:paddingRight">@dimen/questions_padding</item>
         <item name="android:background">@color/colorAccent</item>
         <item name="android:textSize">@dimen/questions_textSize</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
 
@@ -146,15 +152,15 @@
     </style>
 
     <style name="questionsStyle.q3">
-        <item name="android:background">@color/colorAmber</item>
+        <item name="android:background">@color/colorBlueGreen</item>
     </style>
 
     <style name="questionsStyle.q4">
-        <item name="android:background">@color/colorIndigo</item>
+        <item name="android:background">@color/colorBlueGray</item>
     </style>
 
     <style name="questionsStyle.q5">
-        <item name="android:background">@color/colorRed</item>
+        <item name="android:background">@color/colorLightRed</item>
     </style>
 
     <style name="questionsStyle.q6">
@@ -162,7 +168,7 @@
     </style>
 
     <style name="questionsStyle.q7">
-        <item name="android:background">@color/colorLime</item>
+        <item name="android:background">@color/colorBlueGray</item>
     </style>
 
     <style name="questionsStyle.q8">
@@ -170,7 +176,7 @@
     </style>
 
     <style name="questionsStyle.q9">
-        <item name="android:background">@color/colorDeepOrange</item>
+        <item name="android:background">@color/colorAccent</item>
     </style>
 
     <!-- CheckBox Styles -->
@@ -233,12 +239,9 @@
     </style>
 
     <!-- Results' Text -->
-    <style name="resultText" parent="AppTheme">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:gravity">center_horizontal</item>
+    <style name="questionsStyle.Result">
+        <item name="android:gravity">center</item>
         <item name="android:maxLines">4</item>
-        <item name="android:textColor">@android:color/white</item>
         <item name="android:background">@color/colorDeepPurple</item>
         <item name="android:padding">@dimen/results_padding</item>
         <item name="android:textSize">@dimen/results_textSize</item>

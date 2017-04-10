@@ -602,7 +602,7 @@
 
             <TextView
                 android:id="@+id/score_text"
-                style="@style/resultText"
+                style="@style/questionsStyle.Result"
                 android:text="@string/results_text" />
 
             <ImageView

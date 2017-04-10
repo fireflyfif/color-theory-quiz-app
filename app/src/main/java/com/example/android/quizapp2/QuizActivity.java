@@ -63,16 +63,16 @@ public class QuizActivity extends AppCompatActivity {
             currentQuestion = savedInstanceState.getInt(SAVE_CURRENT_QUESTION, currentQuestion);
             name = savedInstanceState.getString(SAVE_NAME, name);
             resultText = savedInstanceState.getString(SAVE_RESULT_TEXT, resultText);
-            // When I add this line the app crushes when rotate
+            // When I add this line the app crushes
 //            yourScore.setText(savedInstanceState.getString(SAVE_RESULT_TEXT));
         }
 
         // Save the image that changes according to the result (not working)
-        if (savedInstanceState == null) {
-            resultImage = R.drawable.color_trophy_empty;
-            } else {
-                resultImage = savedInstanceState.getInt(IMAGE_RESULT, R.drawable.color_trophy_full);
-            }
+//        if (savedInstanceState == null) {
+//            resultImage = R.drawable.color_trophy_empty;
+//            } else {
+//                resultImage = savedInstanceState.getInt(IMAGE_RESULT, R.drawable.color_trophy_full);
+//            }
 
         // Pass an Intent of the name
         Intent intent = getIntent();

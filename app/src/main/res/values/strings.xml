@@ -8,6 +8,7 @@
         (blue).</string>
     <string name="trophy_image">Image of a trophy</string>
 
+    <!-- Buttons Text -->
     <string name="nameText_header">Your name</string>
     <string name="button_start">Start Quiz</string>
     <string name="button_next">Next</string>
@@ -17,6 +18,8 @@
     <string name="button_share">Share</string>
 
     <!-- Toast messages -->
+    <string name="start_quiz_noName">Please enter your name</string>
+    <string name="start_quiz_hello">Hello,&#160;</string>
     <string name="submit_warning">You must answer at least one question!</string>
     <string name="toast_do_better">You can do better!</string>
     <string name="toast_almost_there">Nice! Almost there!</string>
@@ -34,19 +37,19 @@
     <string name="share_result_4">\nYours,&#160;</string>
 
     <!-- Intent Strings -->
-    <string name="intent_mailTo">mailto: fif.iva@gmail.com</string>
-    <string name="intent_extra_mail">To fif.iva@gmail.com</string>
+    <string name="intent_mailTo">mailto: example@gmail.com</string>
+    <string name="intent_extra_mail">To example@gmail.com</string>
 
     <!-- Questions -->
-    <string name="q1">Select all Primary colors</string>
-    <string name="q2">What are the Tertiary Colors?</string>
-    <string name="q3">Which one of the statements is true?</string>
-    <string name="q4">Can you name the Primary color in this image?</string>
-    <string name="q5">What is the other name for Neutral colors that lack saturation?</string>
-    <string name="q6">Select all colors that are Achromatic (Neutral)</string>
-    <string name="q7">Select all color-couples that are Complementary</string>
-    <string name="q8">Select all of the colors from the CMYK color model</string>
-    <string name="q9">Select the three additive Primary colors in the RGB color model?</string>
+    <string name="q1">1. Select all Primary colors</string>
+    <string name="q2">2. What are the Tertiary Colors?</string>
+    <string name="q3">3. Which one of the statements is true?</string>
+    <string name="q4">4. Can you name the Primary color in this image?</string>
+    <string name="q5">5. What is the other name for Neutral colors that lack saturation?</string>
+    <string name="q6">6. Select all colors that are Achromatic (Neutral)</string>
+    <string name="q7">7. Select all color-couples that are Complementary</string>
+    <string name="q8">8. Select all of the colors from the CMYK color model</string>
+    <string name="q9">9. Select the three additive Primary colors in the RGB color model?</string>
 
     <!-- Answers -->
     <string name="q1_ans1">Blue</string>

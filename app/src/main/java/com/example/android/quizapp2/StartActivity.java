@@ -24,11 +24,11 @@ public class StartActivity extends AppCompatActivity {
         String userName = name.getText().toString();
 
         if (userName.isEmpty()) {
-            Toast.makeText(this, "Please enter your name",
+            Toast.makeText(this, getString(R.string.start_quiz_noName),
                     Toast.LENGTH_SHORT).show();
             return;
         } else {
-            Toast.makeText(getApplicationContext(), "Hello, " + userName + "!",
+            Toast.makeText(getApplicationContext(), getString(R.string.start_quiz_hello) + userName,
                     Toast.LENGTH_SHORT).show();
         }
 
