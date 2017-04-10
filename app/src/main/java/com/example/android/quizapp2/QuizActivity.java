@@ -48,7 +48,7 @@ public class QuizActivity extends AppCompatActivity {
     TextView yourScore;
     String resultText;
 
-    private int resultImage;
+    private int resultImageInt;
 
 
     @Override
@@ -63,16 +63,14 @@ public class QuizActivity extends AppCompatActivity {
             currentQuestion = savedInstanceState.getInt(SAVE_CURRENT_QUESTION, currentQuestion);
             name = savedInstanceState.getString(SAVE_NAME, name);
             resultText = savedInstanceState.getString(SAVE_RESULT_TEXT, resultText);
-            // When I add this line the app crushes
-//            yourScore.setText(savedInstanceState.getString(SAVE_RESULT_TEXT));
         }
 
         // Save the image that changes according to the result (not working)
-//        if (savedInstanceState == null) {
-//            resultImage = R.drawable.color_trophy_empty;
-//            } else {
-//                resultImage = savedInstanceState.getInt(IMAGE_RESULT, R.drawable.color_trophy_full);
-//            }
+        if (savedInstanceState == null) {
+            resultImageInt = R.drawable.color_trophy_empty;
+            } else {
+                resultImageInt = savedInstanceState.getInt(IMAGE_RESULT, R.drawable.color_trophy_full);
+            }
 
         // Pass an Intent of the name
         Intent intent = getIntent();
@@ -125,7 +123,7 @@ public class QuizActivity extends AppCompatActivity {
         outState.putInt(SAVE_SCORE, score);
         outState.putInt(SAVE_CURRENT_QUESTION, currentQuestion);
         outState.putString(SAVE_NAME, name);
-        outState.putInt(IMAGE_RESULT, resultImage);
+        outState.putInt(IMAGE_RESULT, resultImageInt);
         // Save state of dynamic text
         outState.putString(SAVE_RESULT_TEXT, resultText);
         outState.putString(SAVE_RESULT_TEXT, yourScore.getText().toString());
@@ -168,25 +166,23 @@ public class QuizActivity extends AppCompatActivity {
         // String for the final result
         resultText = resultMsg();
         displayResultMsg(resultText);
+        ImageView resultImage = (ImageView) findViewById(R.id.result_image);
 
         if (score <= 20) {
             // Toast message "You can do better!"
             Toast.makeText(this, getString(R.string.toast_do_better), Toast.LENGTH_SHORT).show();
             // Change image with Empty Trophy
-            ImageView loserImage = (ImageView) findViewById(R.id.result_image);
-            loserImage.setImageResource(R.drawable.color_trophy_empty);
+            resultImage.setImageResource(R.drawable.color_trophy_empty);
         } else if (score <= 60) {
             // Toast message "Nice! Almost there!"
             Toast.makeText(this, getString(R.string.toast_almost_there), Toast.LENGTH_SHORT).show();
             // Change image with Half full Trophy
-            ImageView mediocreImage = (ImageView) findViewById(R.id.result_image);
-            mediocreImage.setImageResource(R.drawable.color_trophy_half);
+            resultImage.setImageResource(R.drawable.color_trophy_half);
         } else {
             // Toast message "Awesome! You know your Colors!"
             Toast.makeText(this, getString(R.string.toast_awesome), Toast.LENGTH_SHORT).show();
             // Change image with Full Trophy
-            ImageView winnerImage = (ImageView) findViewById(R.id.result_image);
-            winnerImage.setImageResource(R.drawable.color_trophy_full);
+            resultImage.setImageResource(R.drawable.color_trophy_full);
         }
     }
 
