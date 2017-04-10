@@ -16,6 +16,27 @@
     <string name="button_restart">Restart</string>
     <string name="button_share">Share</string>
 
+    <!-- Toast messages -->
+    <string name="submit_warning">You must answer at least one question!</string>
+    <string name="toast_do_better">You can do better!</string>
+    <string name="toast_almost_there">Nice! Almost there!</string>
+    <string name="toast_awesome">Awesome! You know your Colors!</string>
+
+    <!-- Result message -->
+    <string name="result_hey">Hey&#160;</string>
+    <string name="result_score">\nYour score is&#160;</string>
+    <string name="result_final">&#160;out of 90.</string>
+
+    <!-- Result Share message -->
+    <string name="share_result_1">Hey check out my score from the Color Theory Quiz!&#160;</string>
+    <string name="share_result_2">\nI got&#160;</string>
+    <string name="share_result_3">&#160;out of 90 points!</string>
+    <string name="share_result_4">\nYours,&#160;</string>
+
+    <!-- Intent Strings -->
+    <string name="intent_mailTo">mailto: fif.iva@gmail.com</string>
+    <string name="intent_extra_mail">To fif.iva@gmail.com</string>
+
     <!-- Questions -->
     <string name="q1">Select all Primary colors</string>
     <string name="q2">What are the Tertiary Colors?</string>

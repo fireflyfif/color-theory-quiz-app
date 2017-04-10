@@ -5,7 +5,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -22,8 +21,9 @@ public class QuizActivity extends AppCompatActivity {
     public static final String SAVE_SCORE = "saveScore";
     public static final String SAVE_CURRENT_QUESTION = "save_current_question";
     public static final String SAVE_NAME = "save_name";
-    public static final String ALL_CARDS = "all_cards";
-    public static final String SAVE_CARD_ONE = "save_card_one";
+    public static final String SAVE_RESULT_TEXT = "save_result_text";
+    public static final String IMAGE_RESULT = "image_result";
+
     int score = 0;
     int currentQuestion = 0;
 
@@ -44,9 +44,11 @@ public class QuizActivity extends AppCompatActivity {
     CheckBox ansQone[];
     CheckBox ansQtwo[];
 
-
-    private TextView yourScore;
     private String name;
+    TextView yourScore;
+    String resultText;
+
+    private int resultImage;
 
 
     @Override
@@ -54,17 +56,23 @@ public class QuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
+
         // Save the user's current game state
         if (savedInstanceState != null) {
             score = savedInstanceState.getInt(SAVE_SCORE, score);
             currentQuestion = savedInstanceState.getInt(SAVE_CURRENT_QUESTION, currentQuestion);
             name = savedInstanceState.getString(SAVE_NAME, name);
-//            cardViewOne = savedInstanceState.getParcelable(SAVE_CARD_ONE);
-
-
-//            cards = savedInstanceState.getBundle(ALL_CARDS);
+            resultText = savedInstanceState.getString(SAVE_RESULT_TEXT, resultText);
+            // When I add this line the app crushes when rotate
+//            yourScore.setText(savedInstanceState.getString(SAVE_RESULT_TEXT));
         }
 
+        // Save the image that changes according to the result (not working)
+        if (savedInstanceState == null) {
+            resultImage = R.drawable.color_trophy_empty;
+            } else {
+                resultImage = savedInstanceState.getInt(IMAGE_RESULT, R.drawable.color_trophy_full);
+            }
 
         // Pass an Intent of the name
         Intent intent = getIntent();
@@ -88,34 +96,41 @@ public class QuizActivity extends AppCompatActivity {
 
         // Set cards to be GONE, except for the first one
         cards = new CardView[]{cardViewOne, cardViewTwo, cardViewThree, cardViewFour, cardViewFive,
-                cardViewSix, cardViewSeven, cardViewEight, cardViewNine};
-        for (int i = 1; i < 9; i++) {
-            cards[i].setVisibility(View.GONE);
+                cardViewSix, cardViewSeven, cardViewEight, cardViewNine, cardViewLast};
+        for (int i = 0; i < 10; i++) {
+            if (currentQuestion != i) {
+                cards[i].setVisibility(View.GONE);
+            }
         }
-        cardViewLast.setVisibility(View.GONE);
 
-    }
-
-    // Save state when rotating
-    @Override
-    public void onSaveInstanceState(Bundle savedInstanceState) {
-        savedInstanceState.putInt(SAVE_SCORE, score);
-        savedInstanceState.putInt(SAVE_CURRENT_QUESTION, currentQuestion);
-        savedInstanceState.putString(SAVE_NAME, name);
-//        savedInstanceState.putParcelable(SAVE_CARD_ONE, cardViewOne);
-//        savedInstanceState.putParcelable(ALL_CARDS, cards);
-        super.onSaveInstanceState(savedInstanceState);
     }
 
     // Restore state when rotating
-
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
         savedInstanceState.getInt(SAVE_SCORE);
         savedInstanceState.getInt(SAVE_CURRENT_QUESTION);
         savedInstanceState.getString(SAVE_NAME);
-        savedInstanceState.getParcelable(ALL_CARDS);
+        savedInstanceState.getInt(IMAGE_RESULT);
+        // Restore state of dynamic text
+        savedInstanceState.getString(SAVE_RESULT_TEXT);
+        yourScore.setText(savedInstanceState.getString(SAVE_RESULT_TEXT));
+
         super.onRestoreInstanceState(savedInstanceState);
+    }
+
+    // Save state when rotating
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putInt(SAVE_SCORE, score);
+        outState.putInt(SAVE_CURRENT_QUESTION, currentQuestion);
+        outState.putString(SAVE_NAME, name);
+        outState.putInt(IMAGE_RESULT, resultImage);
+        // Save state of dynamic text
+        outState.putString(SAVE_RESULT_TEXT, resultText);
+        outState.putString(SAVE_RESULT_TEXT, yourScore.getText().toString());
+
+        super.onSaveInstanceState(outState);
     }
 
     // Button Next
@@ -134,12 +149,14 @@ public class QuizActivity extends AppCompatActivity {
 
     // Button Submit
     public void buttonSubmit(View view) {
+        currentQuestion +=1;
         calculateScore();
 
         // Disable the Submit Button if the user did not answer any question
         if (score < 1) {
             buttonNext.setEnabled(true);
-            Toast.makeText(QuizActivity.this, "You must answer at least one question!",
+            // Toast message "You must answer at least one question!"
+            Toast.makeText(QuizActivity.this, getString(R.string.submit_warning),
                     Toast.LENGTH_SHORT).show();
             return;
         }
@@ -147,20 +164,27 @@ public class QuizActivity extends AppCompatActivity {
         // Show the last CardView with the Result
         cards[currentQuestion].setVisibility(View.GONE);
         cardViewLast.setVisibility(View.VISIBLE);
-        yourScore.setText("Hey " + name);
+
+        // String for the final result
+        resultText = resultMsg();
+        displayResultMsg(resultText);
+
         if (score <= 20) {
-            yourScore.setText("Hey " + name + "\nYou score is " + score + " out of 90." +
-                    "\nYou can do better!");
+            // Toast message "You can do better!"
+            Toast.makeText(this, getString(R.string.toast_do_better), Toast.LENGTH_SHORT).show();
+            // Change image with Empty Trophy
             ImageView loserImage = (ImageView) findViewById(R.id.result_image);
             loserImage.setImageResource(R.drawable.color_trophy_empty);
         } else if (score <= 60) {
-            yourScore.setText("Hey " + name + "\nYou score is " + score + " out of 90." +
-                    "\nNice! Almost there!");
+            // Toast message "Nice! Almost there!"
+            Toast.makeText(this, getString(R.string.toast_almost_there), Toast.LENGTH_SHORT).show();
+            // Change image with Half full Trophy
             ImageView mediocreImage = (ImageView) findViewById(R.id.result_image);
             mediocreImage.setImageResource(R.drawable.color_trophy_half);
         } else {
-            yourScore.setText("Hey " + name + "\nYou score is " + score + " out of 90." +
-                    "\nAwesome! You know your Colors!");
+            // Toast message "Awesome! You know your Colors!"
+            Toast.makeText(this, getString(R.string.toast_awesome), Toast.LENGTH_SHORT).show();
+            // Change image with Full Trophy
             ImageView winnerImage = (ImageView) findViewById(R.id.result_image);
             winnerImage.setImageResource(R.drawable.color_trophy_full);
         }
@@ -173,21 +197,34 @@ public class QuizActivity extends AppCompatActivity {
         startActivity(new Intent(this, StartActivity.class));
     }
 
-    private String shareResultsMsg(int score, String name) {
-        String intentResultMsg = "Hey, check out my score on The Color Theory Quiz!";
-        intentResultMsg += "\nI got " + score + " out of 90 points!";
-        intentResultMsg += "\nYours, " + name;
-        return intentResultMsg;
-
+    // Display Message with the final result
+    private void displayResultMsg(String message) {
+        yourScore.setText(message);
     }
 
+    // Create message with the final result
+    private String resultMsg() {
+        String messageResult = getString(R.string.result_hey) + name;
+        messageResult += getString(R.string.result_score) + score + getString(R.string.result_final);
+        return messageResult;
+    }
+
+    // Message that is passed with the Intent
+    private String shareResultsMsg() {
+        String intentResultMsg = getString(R.string.share_result_1);
+        intentResultMsg += getString(R.string.share_result_2) + score +
+                getString(R.string.share_result_3);
+        intentResultMsg += getString(R.string.share_result_4) + name;
+        return intentResultMsg;
+    }
+
+    // Button Share
     public void buttonShare(View view) {
-        String intentResultMsg = shareResultsMsg(score, name);
-        Log.v("QuizActivity", "Display message here: " + intentResultMsg);
+        String intentResultMsg = shareResultsMsg();
 
         Intent shareIntent = new Intent(android.content.Intent.ACTION_SENDTO);
-        shareIntent.setData(Uri.parse("mailto: fif.iva@gmail.com"));
-        shareIntent.putExtra(Intent.EXTRA_EMAIL, "To fif.iva@gmail.com");
+        shareIntent.setData(Uri.parse(getString(R.string.intent_mailTo)));
+        shareIntent.putExtra(Intent.EXTRA_EMAIL, getString(R.string.intent_extra_mail));
         shareIntent.putExtra(Intent.EXTRA_TEXT, intentResultMsg);
         if (shareIntent.resolveActivity(getPackageManager()) != null) {
             startActivity(shareIntent);
@@ -222,7 +259,6 @@ public class QuizActivity extends AppCompatActivity {
         if (ans1.isChecked() && !ans2.isChecked() && ans3.isChecked() &&
                 !ans4.isChecked() && ans5.isChecked() && !ans6.isChecked()) {
             score += 10;
-//            Toast.makeText(this, "You are correct!", Toast.LENGTH_SHORT).show();
         }
     }
 
