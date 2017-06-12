@@ -32,8 +32,7 @@ public class StartActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
         }
 
-        startNewActivity.putExtra("your_name", userName);
-
+        startNewActivity.putExtra(USER_NAME, userName);
         startActivity(startNewActivity);
     }
 }

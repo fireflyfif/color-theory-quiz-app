@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -27,7 +26,6 @@ public class QuizActivity extends AppCompatActivity {
     int score = 0;
     int currentQuestion = 0;
 
-
     CardView cardViewOne;
     CardView cardViewTwo;
     CardView cardViewThree;
@@ -39,23 +37,17 @@ public class QuizActivity extends AppCompatActivity {
     CardView cardViewNine;
     CardView cardViewLast;
     CardView cards[];
-    Button buttonNext;
 
-    CheckBox ansQone[];
-    CheckBox ansQtwo[];
-
+    private TextView yourScore;
+    private String resultText;
+    private ImageView resultImage;
     private String name;
-    TextView yourScore;
-    String resultText;
-
     private int resultImageInt;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
-
 
         // Save the user's current game state
         if (savedInstanceState != null) {
@@ -65,18 +57,13 @@ public class QuizActivity extends AppCompatActivity {
             resultText = savedInstanceState.getString(SAVE_RESULT_TEXT, resultText);
         }
 
-        // Save the image that changes according to the result (not working)
-        if (savedInstanceState == null) {
-            resultImageInt = R.drawable.color_trophy_empty;
-            } else {
-                resultImageInt = savedInstanceState.getInt(IMAGE_RESULT, R.drawable.color_trophy_full);
-            }
-
         // Pass an Intent of the name
         Intent intent = getIntent();
         name = intent.getStringExtra(USER_NAME);
         TextView yourName = (TextView) findViewById(R.id.name_text);
         yourName.setText(name);
+
+        resultImageInt = 1;
 
         // Find views from the xml
         cardViewOne = (CardView) findViewById(R.id.cardView_1);
@@ -90,7 +77,6 @@ public class QuizActivity extends AppCompatActivity {
         cardViewNine = (CardView) findViewById(R.id.cardView_9);
         cardViewLast = (CardView) findViewById(R.id.cardView_last);
         yourScore = (TextView) findViewById(R.id.score_text);
-        buttonNext = (Button) findViewById(R.id.button_next);
 
         // Set cards to be GONE, except for the first one
         cards = new CardView[]{cardViewOne, cardViewTwo, cardViewThree, cardViewFour, cardViewFive,
@@ -100,7 +86,6 @@ public class QuizActivity extends AppCompatActivity {
                 cards[i].setVisibility(View.GONE);
             }
         }
-
     }
 
     // Restore state when rotating
@@ -147,17 +132,8 @@ public class QuizActivity extends AppCompatActivity {
 
     // Button Submit
     public void buttonSubmit(View view) {
-        currentQuestion +=1;
+        currentQuestion += 1;
         calculateScore();
-
-        // Disable the Submit Button if the user did not answer any question
-        if (score < 1) {
-            buttonNext.setEnabled(true);
-            // Toast message "You must answer at least one question!"
-            Toast.makeText(QuizActivity.this, getString(R.string.submit_warning),
-                    Toast.LENGTH_SHORT).show();
-            return;
-        }
 
         // Show the last CardView with the Result
         cards[currentQuestion].setVisibility(View.GONE);
@@ -166,21 +142,34 @@ public class QuizActivity extends AppCompatActivity {
         // String for the final result
         resultText = resultMsg();
         displayResultMsg(resultText);
-        ImageView resultImage = (ImageView) findViewById(R.id.result_image);
+        resultImage = (ImageView) findViewById(R.id.result_image);
 
-        if (score <= 20) {
+        if (score == 0) {
+            // Toast message "Please, try again!"
+            Toast.makeText(this, getString(R.string.result_zero) + score +
+                            getString(R.string.result_final) + "\n" + getString(R.string.toast_try_again),
+                    Toast.LENGTH_LONG).show();
+            // Change image with Empty Trophy
+            resultImage.setImageResource(R.drawable.color_trophy_empty);
+        } else if (score <= 20) {
             // Toast message "You can do better!"
-            Toast.makeText(this, getString(R.string.toast_do_better), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.result_score) + score +
+                            getString(R.string.result_final) + "\n" + getString(R.string.toast_do_better),
+                    Toast.LENGTH_LONG).show();
             // Change image with Empty Trophy
             resultImage.setImageResource(R.drawable.color_trophy_empty);
         } else if (score <= 60) {
             // Toast message "Nice! Almost there!"
-            Toast.makeText(this, getString(R.string.toast_almost_there), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.result_score) + score +
+                            getString(R.string.result_final) + "\n" + getString(R.string.toast_almost_there),
+                    Toast.LENGTH_LONG).show();
             // Change image with Half full Trophy
             resultImage.setImageResource(R.drawable.color_trophy_half);
         } else {
             // Toast message "Awesome! You know your Colors!"
-            Toast.makeText(this, getString(R.string.toast_awesome), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.result_score) + score +
+                            getString(R.string.result_final) + "\n" + getString(R.string.toast_awesome),
+                    Toast.LENGTH_LONG).show();
             // Change image with Full Trophy
             resultImage.setImageResource(R.drawable.color_trophy_full);
         }
@@ -227,7 +216,6 @@ public class QuizActivity extends AppCompatActivity {
         }
     }
 
-
     // Calculate score
     public void calculateScore() {
         score = 0;
@@ -250,7 +238,6 @@ public class QuizActivity extends AppCompatActivity {
         CheckBox ans4 = (CheckBox) findViewById(R.id.checkBox_4);
         CheckBox ans5 = (CheckBox) findViewById(R.id.checkBox_5);
         CheckBox ans6 = (CheckBox) findViewById(R.id.checkBox_6);
-        ansQone = new CheckBox[]{ans1, ans2, ans3, ans4, ans5, ans6};
 
         if (ans1.isChecked() && !ans2.isChecked() && ans3.isChecked() &&
                 !ans4.isChecked() && ans5.isChecked() && !ans6.isChecked()) {
@@ -277,7 +264,7 @@ public class QuizActivity extends AppCompatActivity {
     // Score Question No.4
     public void scoringQuestionFour() {
         EditText editQuestion = (EditText) findViewById(R.id.editText_q4);
-        if (editQuestion.getText().toString().equals(getString(R.string.q4_ans))) {
+        if (editQuestion.getText().toString().trim().equals(getString(R.string.q4_ans))) {
             score += 10;
         }
     }
@@ -285,7 +272,7 @@ public class QuizActivity extends AppCompatActivity {
     // Score Question No.5
     public void scoringQuestionFive() {
         EditText editQuestionFive = (EditText) findViewById(R.id.editText_q5);
-        if (editQuestionFive.getText().toString().equals(getString(R.string.q5_ans))) {
+        if (editQuestionFive.getText().toString().trim().equals(getString(R.string.q5_ans))) {
             score += 10;
         }
     }
@@ -313,7 +300,6 @@ public class QuizActivity extends AppCompatActivity {
         CheckBox ans4 = (CheckBox) findViewById(R.id.q7_ans4);
         CheckBox ans5 = (CheckBox) findViewById(R.id.q7_ans5);
         CheckBox ans6 = (CheckBox) findViewById(R.id.q7_ans6);
-        ansQtwo = new CheckBox[]{ans1, ans2, ans3, ans4, ans5, ans6};
 
         if (ans1.isChecked() && !ans2.isChecked() && ans3.isChecked() && ans4.isChecked()
                 && !ans5.isChecked() && !ans6.isChecked()) {

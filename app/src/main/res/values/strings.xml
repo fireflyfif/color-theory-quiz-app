@@ -21,11 +21,13 @@
     <string name="start_quiz_noName">Please enter your name</string>
     <string name="start_quiz_hello">Hello,&#160;</string>
     <string name="submit_warning">You must answer at least one question!</string>
+    <string name="toast_try_again">Please, try again!</string>
     <string name="toast_do_better">You can do better!</string>
     <string name="toast_almost_there">Nice! Almost there!</string>
     <string name="toast_awesome">Awesome! You know your Colors!</string>
 
     <!-- Result message -->
+    <string name="result_zero">Oh, No!\nYour score is&#160;</string>
     <string name="result_hey">Hey&#160;</string>
     <string name="result_score">\nYour score is&#160;</string>
     <string name="result_final">&#160;out of 90.</string>

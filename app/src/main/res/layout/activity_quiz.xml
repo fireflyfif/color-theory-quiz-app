@@ -20,7 +20,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-
             <TextView
                 android:id="@+id/question_1"
                 style="@style/questionsStyle"
@@ -28,8 +27,7 @@
 
             <LinearLayout style="@style/linearLayout_horizontal">
 
-                <LinearLayout
-                    style="@style/LinearLayout_vertical">
+                <LinearLayout style="@style/LinearLayout_vertical">
 
                     <CheckBox
                         android:id="@+id/checkBox_1"
@@ -48,8 +46,7 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    style="@style/LinearLayout_vertical">
+                <LinearLayout style="@style/LinearLayout_vertical">
 
                     <CheckBox
                         android:id="@+id/checkBox_4"
@@ -82,7 +79,6 @@
                     android:onClick="buttonNext"
                     android:text="@string/button_next" />
 
-
             </LinearLayout>
 
         </LinearLayout>
@@ -97,7 +93,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
 
             <TextView
                 android:id="@+id/question_2"
@@ -141,7 +136,6 @@
 
     </android.support.v7.widget.CardView>
 
-
     <android.support.v7.widget.CardView
         android:id="@+id/cardView_3"
         style="@style/CardViewStyle">
@@ -150,7 +144,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
 
             <TextView
                 android:id="@+id/question_3"
@@ -188,9 +181,7 @@
                     android:onClick="buttonNext"
                     android:text="@string/button_next" />
 
-
             </LinearLayout>
-
 
         </LinearLayout>
 
@@ -206,17 +197,15 @@
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
-
             <TextView
                 android:id="@+id/question_4"
                 style="@style/questionsStyle.q4"
                 android:text="@string/q4" />
 
-
             <ImageView
-                android:contentDescription="@string/imageQuestion"
                 android:id="@+id/image_q4"
                 style="@style/imageQuestion4"
+                android:contentDescription="@string/imageQuestion"
                 android:src="@drawable/quiz_image" />
 
             <EditText
@@ -252,12 +241,10 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-
             <TextView
                 android:id="@+id/question_5"
                 style="@style/questionsStyle.q5"
                 android:text="@string/q5" />
-
 
             <EditText
                 android:id="@+id/editText_q5"
@@ -291,17 +278,14 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-
             <TextView
                 android:id="@+id/question_6"
                 style="@style/questionsStyle.q6"
                 android:text="@string/q6" />
 
-            <LinearLayout
-                style="@style/linearLayout_horizontal">
+            <LinearLayout style="@style/linearLayout_horizontal">
 
-                <LinearLayout
-                    style="@style/LinearLayout_vertical">
+                <LinearLayout style="@style/LinearLayout_vertical">
 
                     <CheckBox
                         android:id="@+id/q6_ans1"
@@ -320,8 +304,7 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    style="@style/LinearLayout_vertical">
+                <LinearLayout style="@style/LinearLayout_vertical">
 
                     <CheckBox
                         android:id="@+id/q6_ans4"
@@ -354,7 +337,6 @@
                     android:onClick="buttonNext"
                     android:text="@string/button_next" />
 
-
             </LinearLayout>
 
         </LinearLayout>
@@ -370,7 +352,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-
             <TextView
                 android:id="@+id/question_7"
                 style="@style/questionsStyle.q7"
@@ -378,8 +359,7 @@
 
             <LinearLayout style="@style/linearLayout_horizontal">
 
-                <LinearLayout
-                    style="@style/LinearLayout_vertical">
+                <LinearLayout style="@style/LinearLayout_vertical">
 
                     <CheckBox
                         android:id="@+id/q7_ans1"
@@ -397,9 +377,7 @@
                         android:drawableLeft="@drawable/blue_orange" />
                 </LinearLayout>
 
-                <LinearLayout
-                    style="@style/LinearLayout_vertical">
-
+                <LinearLayout style="@style/LinearLayout_vertical">
 
                     <CheckBox
                         android:id="@+id/q7_ans4"
@@ -419,7 +397,6 @@
                 </LinearLayout>
             </LinearLayout>
 
-
             <LinearLayout style="@style/buttons_LinearLayout">
 
                 <Button
@@ -432,13 +409,11 @@
                     android:onClick="buttonNext"
                     android:text="@string/button_next" />
 
-
             </LinearLayout>
 
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
-
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardView_8"
@@ -449,7 +424,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-
             <TextView
                 android:id="@+id/question_8"
                 style="@style/questionsStyle.q8"
@@ -457,8 +431,7 @@
 
             <LinearLayout style="@style/linearLayout_horizontal">
 
-                <LinearLayout
-                    style="@style/LinearLayout_vertical">
+                <LinearLayout style="@style/LinearLayout_vertical">
 
                     <CheckBox
                         android:id="@+id/q8_ans1"
@@ -482,8 +455,7 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    style="@style/LinearLayout_vertical">
+                <LinearLayout style="@style/LinearLayout_vertical">
 
                     <CheckBox
                         android:id="@+id/q8_ans5"
@@ -536,7 +508,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-
             <TextView
                 android:id="@+id/question_9"
                 style="@style/questionsStyle.q9"
@@ -580,7 +551,6 @@
 
     </android.support.v7.widget.CardView>
 
-
     <android.support.v7.widget.CardView
         android:id="@+id/cardView_last"
         style="@style/CardViewStyle">
@@ -590,16 +560,15 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-
             <TextView
                 android:id="@+id/score_text"
                 style="@style/questionsStyle.Result"
                 android:text="@string/results_text" />
 
             <ImageView
-                android:contentDescription="@string/trophy_image"
                 android:id="@+id/result_image"
                 style="@style/trophyImage"
+                android:contentDescription="@string/trophy_image"
                 android:src="@drawable/color_trophy_full" />
 
             <LinearLayout style="@style/buttons_LinearLayout">
@@ -621,6 +590,5 @@
         </LinearLayout>
 
     </android.support.v7.widget.CardView>
-
 
 </RelativeLayout>
