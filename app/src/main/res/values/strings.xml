@@ -29,7 +29,7 @@
     <!-- Result message -->
     <string name="result_zero">Oh, No!\nYour score is&#160;</string>
     <string name="result_hey">Hey&#160;</string>
-    <string name="result_score">\nYour score is&#160;</string>
+    <string name="result_score">Your score is&#160;</string>
     <string name="result_final">&#160;out of 90.</string>
 
     <!-- Result Share message -->

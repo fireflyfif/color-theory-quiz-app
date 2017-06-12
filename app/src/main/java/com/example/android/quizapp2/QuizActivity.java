@@ -147,29 +147,29 @@ public class QuizActivity extends AppCompatActivity {
         if (score == 0) {
             // Toast message "Please, try again!"
             Toast.makeText(this, getString(R.string.result_zero) + score +
-                            getString(R.string.result_final) + "\n" + getString(R.string.toast_try_again),
-                    Toast.LENGTH_LONG).show();
+                            getString(R.string.result_final) + "\n" +
+                            getString(R.string.toast_try_again), Toast.LENGTH_LONG).show();
             // Change image with Empty Trophy
             resultImage.setImageResource(R.drawable.color_trophy_empty);
         } else if (score <= 20) {
             // Toast message "You can do better!"
             Toast.makeText(this, getString(R.string.result_score) + score +
-                            getString(R.string.result_final) + "\n" + getString(R.string.toast_do_better),
-                    Toast.LENGTH_LONG).show();
+                            getString(R.string.result_final) + "\n" +
+                            getString(R.string.toast_do_better), Toast.LENGTH_LONG).show();
             // Change image with Empty Trophy
             resultImage.setImageResource(R.drawable.color_trophy_empty);
         } else if (score <= 60) {
             // Toast message "Nice! Almost there!"
             Toast.makeText(this, getString(R.string.result_score) + score +
-                            getString(R.string.result_final) + "\n" + getString(R.string.toast_almost_there),
-                    Toast.LENGTH_LONG).show();
+                            getString(R.string.result_final) + "\n" +
+                            getString(R.string.toast_almost_there), Toast.LENGTH_LONG).show();
             // Change image with Half full Trophy
             resultImage.setImageResource(R.drawable.color_trophy_half);
         } else {
             // Toast message "Awesome! You know your Colors!"
             Toast.makeText(this, getString(R.string.result_score) + score +
-                            getString(R.string.result_final) + "\n" + getString(R.string.toast_awesome),
-                    Toast.LENGTH_LONG).show();
+                            getString(R.string.result_final) + "\n" +
+                            getString(R.string.toast_awesome), Toast.LENGTH_LONG).show();
             // Change image with Full Trophy
             resultImage.setImageResource(R.drawable.color_trophy_full);
         }
@@ -190,7 +190,8 @@ public class QuizActivity extends AppCompatActivity {
     // Create message with the final result
     private String resultMsg() {
         String messageResult = getString(R.string.result_hey) + name;
-        messageResult += getString(R.string.result_score) + score + getString(R.string.result_final);
+        messageResult += "\n" + getString(R.string.result_score) + score +
+                getString(R.string.result_final);
         return messageResult;
     }
 
