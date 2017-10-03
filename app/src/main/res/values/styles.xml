@@ -108,7 +108,7 @@
         <item name="android:gravity">center</item>
         <item name="android:layout_alignParentTop">true</item>
         <item name="android:textSize">@dimen/nameText_size</item>
-        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColor">@color/colorWhite</item>
         <item name="elevation">@dimen/nameText_elevation</item>
         <item name="android:background">@color/colorPrimary</item>
     </style>
@@ -128,7 +128,7 @@
         <item name="android:layout_below">@id/name_text</item>
         <item name="cardCornerRadius">@dimen/cardCornerRadius</item>
         <item name="contentPadding">@dimen/contentPadding</item>
-        <item name="cardBackgroundColor">@android:color/white</item>
+        <item name="cardBackgroundColor">@color/colorWhite</item>
         <item name="cardElevation">@dimen/cardElevation</item>
         <item name="android:layout_margin">@dimen/cardView_layoutMargin</item>
     </style>
@@ -144,7 +144,7 @@
         <item name="android:background">@color/colorAccent</item>
         <item name="android:textSize">@dimen/questions_textSize</item>
         <item name="android:fontFamily">sans-serif-medium</item>
-        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColor">@color/colorWhite</item>
     </style>
 
     <style name="questionsStyle.q2">

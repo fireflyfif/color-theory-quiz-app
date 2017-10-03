@@ -265,7 +265,7 @@ public class QuizActivity extends AppCompatActivity {
     // Score Question No.4
     public void scoringQuestionFour() {
         EditText editQuestion = (EditText) findViewById(R.id.editText_q4);
-        if (editQuestion.getText().toString().trim().equals(getString(R.string.q4_ans))) {
+        if (editQuestion.getText().toString().trim().toLowerCase().equals(getString(R.string.q4_ans))) {
             score += 10;
         }
     }
@@ -273,7 +273,7 @@ public class QuizActivity extends AppCompatActivity {
     // Score Question No.5
     public void scoringQuestionFive() {
         EditText editQuestionFive = (EditText) findViewById(R.id.editText_q5);
-        if (editQuestionFive.getText().toString().trim().equals(getString(R.string.q5_ans))) {
+        if (editQuestionFive.getText().toString().trim().toLowerCase().equals(getString(R.string.q5_ans))) {
             score += 10;
         }
     }
