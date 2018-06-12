@@ -211,7 +211,8 @@
             <EditText
                 android:id="@+id/editText_q4"
                 style="@style/editText"
-                android:hint="@string/editText_hint" />
+                android:hint="@string/editText_hint"
+                android:inputType="textAutoCorrect" />
 
             <LinearLayout style="@style/buttons_LinearLayout">
 
@@ -249,7 +250,8 @@
             <EditText
                 android:id="@+id/editText_q5"
                 style="@style/editText"
-                android:hint="@string/editText_hint" />
+                android:hint="@string/editText_hint"
+                android:inputType="textAutoCorrect"/>
 
             <LinearLayout style="@style/buttons_LinearLayout">
 

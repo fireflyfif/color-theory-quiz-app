@@ -144,36 +144,42 @@ public class QuizActivity extends AppCompatActivity {
         displayResultMsg(resultText);
         resultImage = (ImageView) findViewById(R.id.result_image);
 
+        String scoreText = "";
+        String greetingMessage = "";
+
         if (score == 0) {
             // Toast message "Please, try again!"
-            // Currently disabled, because the App crashes, because of the Toast messages
-//            Toast.makeText(this, getString(R.string.result_zero) + score +
-//                    getString(R.string.result_final) + "\n" +
-//                    getString(R.string.toast_try_again), Toast.LENGTH_LONG).show();
+            scoreText = getString(R.string.toast_try_again);
+            greetingMessage = getString(R.string.result_zero);
+
             // Change image with Empty Trophy
             resultImage.setImageResource(R.drawable.color_trophy_empty);
         } else if (score <= 20) {
             // Toast message "You can do better!"
-//            Toast.makeText(this, getString(R.string.result_score) + score +
-//                            getString(R.string.result_final) + "\n" +
-//                            getString(R.string.toast_do_better), Toast.LENGTH_LONG).show();
+            scoreText = getString(R.string.toast_do_better);
+            greetingMessage = getString(R.string.result_hey);
+
             // Change image with Empty Trophy
             resultImage.setImageResource(R.drawable.color_trophy_empty);
         } else if (score <= 60) {
             // Toast message "Nice! Almost there!"
-//            Toast.makeText(this, getString(R.string.result_score) + score +
-//                            getString(R.string.result_final) + "\n" +
-//                            getString(R.string.toast_almost_there), Toast.LENGTH_LONG).show();
+            scoreText = getString(R.string.toast_almost_there);
+            greetingMessage = getString(R.string.result_hey);
+
             // Change image with Half full Trophy
             resultImage.setImageResource(R.drawable.color_trophy_half);
         } else {
             // Toast message "Awesome! You know your Colors!"
-//            Toast.makeText(this, getString(R.string.result_score) + score +
-//                            getString(R.string.result_final) + "\n" +
-//                            getString(R.string.toast_awesome), Toast.LENGTH_LONG).show();
+            scoreText = getString(R.string.toast_awesome);
+            greetingMessage = getString(R.string.result_hey);
+
             // Change image with Full Trophy
             resultImage.setImageResource(R.drawable.color_trophy_full);
         }
+
+        Toast.makeText(this, greetingMessage + score +
+                getString(R.string.result_final) + "\n" +
+                scoreText, Toast.LENGTH_LONG).show();
     }
 
     // Button Restart
